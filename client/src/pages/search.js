@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import {Container, Row, Col, Jumbotron, InputGroup, FormControl, Button} from 'react-bootstrap';
 import '../css/search.css';
 import API from '../utils/API';
+import Results from '../components/searchResults';
 
 function Search() {
 
@@ -14,7 +15,10 @@ function Search() {
 
     const handleSubmit = () => {
         let book= search.toLowerCase().replace(/ /g, "");
-        API.getBooks(book).then(res => setBooks(res.data.items));
+        API.getBooks(book).then(res => {
+            console.log(res.data.items);
+            setBooks(res.data.items);
+        });
     } 
 
     return (
@@ -34,6 +38,22 @@ function Search() {
                          </InputGroup.Append>                      
                         </InputGroup>
                 </Jumbotron>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={{span: 8, offset: 2}}>
+                <h1 style={{textAlign: "center", marginTop: "25px"}}>Results: </h1>
+                    {books.length > 0 && books.map(el => {
+                        return (
+                        <Results
+                        title= {el.volumeInfo.title}
+                        authors={el.volumeInfo.authors}
+                        desc= {el.volumeInfo.description}
+                        link= {el.volumeInfo.infoLink}
+                        image= {el.volumeInfo.imageLinks.thumbnail}
+                        />
+                        )
+                    })}
                 </Col>
             </Row>
         </Container>

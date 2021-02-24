@@ -1,5 +1,6 @@
 import React from "react";
-import {Nav, Navbar, Row, Col} from 'react-bootstrap';
+import {Navbar, Row, Col} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import google from '../utils/images/google.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faSave } from "@fortawesome/free-solid-svg-icons";
@@ -19,8 +20,12 @@ function Header() {
                 </Col>
                 <Col md={6} />
                 <Col className="headerCol" md={2}>
-            <FontAwesomeIcon id="searchIcon" className="fas fa-stack fa-3x" icon={faSearch} />
-            <FontAwesomeIcon id="saveIcon" className="fas fa-stack fa-3x" icon={faSave} />
+                <Link to="/">
+                    <FontAwesomeIcon href="/" id="searchIcon" className="fas fa-stack fa-3x" icon={faSearch} />
+                </Link>
+                <Link to="/saved">
+                    <FontAwesomeIcon href="/saved" id="saveIcon" className="fas fa-stack fa-3x" icon={faSave} />
+                </Link>
                 </Col>
             </Row>
           
