@@ -1,0 +1,39 @@
+.bar {
+    background-color: rgba(64, 65, 62, 0.199);
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.headerRow {
+    width: 100%;
+}
+
+hr {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 3px;
+    width: 55%;
+    height: 1px;
+}
+
+.fas {
+    vertical-align: bottom;
+}
+
+#searchIcon {
+    margin-right: 15px;
+    color: #DB4437;
+}
+#saveIcon {
+    color: #DB4437;
+}
+
+.headerCol {
+    text-align: right;
+}
+
+.headerText {
+    color: #4285F4;
+    font-size: 28px;
+}
+
