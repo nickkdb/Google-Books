@@ -12,8 +12,8 @@ function Header() {
         <Navbar className= "bar">
             <Row className= "headerRow">
                 <Col md={4}>
-                <Navbar.Brand href="">
-            <img class="center-block" src={google} alt="logo" height={"50"} width={"150"} />
+                <Navbar.Brand>
+            <img src={google} alt="logo" height={"50"} width={"150"} />
           </Navbar.Brand>
           <hr color={"black"} />
           <h4 className="headerText">Books Search</h4>

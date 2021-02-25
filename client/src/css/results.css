@@ -18,8 +18,16 @@
 
 .buttons {
     width: 25%;
-    background-color: #F4B400 !important;
     border-color: white !important;
+}
+.blue {
+background-color: #4285F4 !important;
+}
+.yellow {
+background-color: #F4B400 !important;
+}
+.red {
+background-color: #DB4437 !important;
 }
 .btn:focus, .btn:active {
     outline: none !important;

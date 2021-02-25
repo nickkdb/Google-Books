@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import {Container, Row, Col, Jumbotron, InputGroup, FormControl, Button} from 'react-bootstrap';
 import '../css/search.css';
 import API from '../utils/API';
-import Results from '../components/searchResults';
+import Results from '../components/results';
+import logo from "../utils/images/bookclipart.png";
 
 function Search() {
 
@@ -20,6 +21,9 @@ function Search() {
             setBooks(res.data.items);
         });
     } 
+
+    const saveBook = (res) => API.saveBook(res);
+    
 
     return (
         <Container fluid>
@@ -46,11 +50,14 @@ function Search() {
                     {books.length > 0 && books.map(el => {
                         return (
                         <Results
+                        id= {el.id}
                         title= {el.volumeInfo.title}
                         authors={el.volumeInfo.authors}
                         desc= {el.volumeInfo.description}
                         link= {el.volumeInfo.infoLink}
-                        image= {el.volumeInfo.imageLinks.thumbnail}
+                        image= {(el.volumeInfo.imageLinks ? el.volumeInfo.imageLinks.thumbnail : logo)}
+                        fxn= {saveBook}
+                        page= {"search"}
                         />
                         )
                     })}
