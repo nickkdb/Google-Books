@@ -1,29 +1,38 @@
-# Create React Express App
+ # Book Search
+    
+## Table of Contents
+- [License](#License)
+- [Description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Testing](#Testing)
+- [Contributing](#Contributing)
+- [Questions](#Questions)
 
-## About This Boilerplate
+<img src= "./screenshot/booksearch.png" alt= "screenshot">
+    
+## License
+> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) - this project is protected through the MIT license
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## Description
+> My google book search project is a MERN app that allows users to find and save books easily. This is done by utilizing Google's Book API, routing API calls between react and the express server, and storing any books the user decides to save within a mongo database.
 
-The front-end React app will auto-reload as it's updated via webpack dev server and the backend Express app will auto-reload independently with nodemon.
+## Installation
+> To install the program, clone the repo to your local machine. From the directory you cloned the project into, open the terminal and run an npm install. After that, run the program using "npm run start" to concurrently start both servers.
 
-## Starting the app locally
+## Usage
+> Search for books, view them on google's page where you can preview/purchase them, or save them on the app!
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+## Testing
+> Test it by viewing the project by following the deployed link above, or clone the project to your machine and run it!
 
-```
-npm install
-```
+## Contributions
+> If you would like to contribute to this project, please use the information found below to contact me and discuss further
 
-This should install node modules within the server and the client folder.
+## Questions
+To reach me with additional questions:
+>
+> Find me on [GitHub](https://github.com/nickkdb)
+>
+> Send me an [Email](mailto:nborges.dev@gmail.com)
 
-After both installations complete, run the following command in your terminal:
-
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
