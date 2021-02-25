@@ -8,12 +8,24 @@ export default {
     },
     saveBook: (book) => {
         console.log("sending post!")
-        return axios.post("/api/books", book);
+        return axios.post("/api/books", book, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
     },
     loadSaved: () => {
-        return axios.get("/api/books");
+        return axios.get("/api/books", {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
     },
     deleteBook: (id) => {
-        return axios.delete("/api/books/" + id);
+        return axios.delete("/api/books/" + id, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
     }
 };
