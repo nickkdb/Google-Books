@@ -8,23 +8,36 @@ import "../css/style.css";
 
 function Header() {
 
+    let w= window.innerWidth;
+    let logoheight;
+    let logowidth;
+    let searchAndSaveSize;
+    if (w <= 480) {
+        logoheight= "40";
+        logowidth= "125";
+        searchAndSaveSize= "2";
+    } else {
+        logoheight= "50";
+        logowidth= "150";
+        searchAndSaveSize= "3";
+    }
+
     return (
         <Navbar className= "bar">
             <Row className= "headerRow">
-                <Col md={4}>
+                <Col className="googleCol" md={6}>
                 <Navbar.Brand>
-            <img src={google} alt="logo" height={"50"} width={"150"} />
+            <img className="googleLogo" src={google} alt="logo" height={logoheight} width={logowidth} />
           </Navbar.Brand>
           <hr color={"black"} />
           <h4 className="headerText">Books Search</h4>
                 </Col>
-                <Col md={6} />
-                <Col className="headerCol" md={2}>
-                <Link to="/">
-                    <FontAwesomeIcon href="/" id="searchIcon" className="fas fa-stack fa-3x" icon={faSearch} />
-                </Link>
+                <Col className="headerCol d-flex flex-row-reverse" md={6}>
                 <Link to="/saved">
-                    <FontAwesomeIcon href="/saved" id="saveIcon" className="fas fa-stack fa-3x" icon={faSave} />
+                    <FontAwesomeIcon href="/saved" id="saveIcon" className={`fas fa-stack fa-${searchAndSaveSize}x`} icon={faSave} />
+                </Link>
+                <Link to="/">
+                    <FontAwesomeIcon href="/" id="searchIcon" className={`fas fa-stack fa-${searchAndSaveSize}x`} icon={faSearch} />
                 </Link>
                 </Col>
             </Row>
